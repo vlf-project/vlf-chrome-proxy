@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_URL="${REPO_URL:-https://github.com/skalover32-a11y/vlf-chrome-proxy.git}"
+REPO_URL="${REPO_URL:-https://github.com/vlf-project/vlf-chrome-proxy.git}"
 INSTALL_DIR="${INSTALL_DIR:-/opt/vlf-chrome-proxy}"
 BRANCH="${BRANCH:-main}"
 ENV_FILE="${ENV_FILE:-$INSTALL_DIR/.env}"

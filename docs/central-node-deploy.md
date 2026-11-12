@@ -19,7 +19,7 @@ On a clean Ubuntu server:
 ```bash
 NODE_ROLE=central \
 BACKEND_PORT=18080 \
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/skalover32-a11y/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/vlf-project/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
 ```
 
 The installer:
@@ -93,7 +93,7 @@ NODE_DEFAULT_COUNTRY=DE \
 NODE_DEFAULT_CITY=Frankfurt \
 PROXY_PUBLIC_HOST=de1.example.com \
 PROXY_PUBLIC_PORT=1443 \
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/skalover32-a11y/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/vlf-project/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
 ```
 
 After the proxy node starts, it registers itself in the central backend. The Chrome extension receives the node in `nodes[]` after session revalidation or popup reopen.
@@ -101,7 +101,7 @@ After the proxy node starts, it registers itself in the central backend. The Chr
 Interactive install is also supported:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/skalover32-a11y/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/vlf-project/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
 ```
 
 Choose `proxy_node`. On a fresh install, the script asks for central backend URL, central registration token, node id, display name, country, city, public proxy host, and proxy port.
@@ -139,7 +139,7 @@ If Let's Encrypt fails, the installer stops by default because Chrome rejects se
 For local smoke tests only, you can allow the old self-signed fallback:
 
 ```bash
-ALLOW_SELF_SIGNED_PROXY_CERT=true bash -c "$(curl -fsSL https://raw.githubusercontent.com/skalover32-a11y/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
+ALLOW_SELF_SIGNED_PROXY_CERT=true bash -c "$(curl -fsSL https://raw.githubusercontent.com/vlf-project/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
 ```
 
 ## Notes

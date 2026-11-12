@@ -223,13 +223,13 @@ NODE_DEFAULT_COUNTRY=DE \
 NODE_DEFAULT_CITY=Frankfurt \
 PROXY_PUBLIC_HOST=de1.example.com \
 PROXY_PUBLIC_PORT=1443 \
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/skalover32-a11y/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/vlf-project/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
 ```
 
 Interactive proxy node install:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/skalover32-a11y/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/vlf-project/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
 ```
 
 If required values are missing, the installer asks for the install role and writes answers to `.env`. For `central`, it asks for the backend port and generates `NODE_REGISTRATION_TOKEN` automatically. Copy that token from `/opt/vlf-chrome-proxy/.env` and use it on proxy nodes. For a fresh `proxy_node`, it always asks for `CENTRAL_BACKEND_URL`, `NODE_REGISTRATION_TOKEN`, node id/name/country/city, `PROXY_PUBLIC_HOST`, and `PROXY_PUBLIC_PORT` instead of silently accepting template defaults.
@@ -384,19 +384,19 @@ The backend never logs raw access links, raw Remnawave API token, or raw session
 On a clean Ubuntu host:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/skalover32-a11y/vlf-chrome-proxy/main/deploy/ubuntu/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/vlf-project/vlf-chrome-proxy/main/deploy/ubuntu/install.sh | bash
 ```
 
 By default the installer does not build Go/Docker images on the server. It pulls prebuilt images from GHCR:
 
-- `ghcr.io/skalover32-a11y/vlf-chrome-proxy-api:main`
-- `ghcr.io/skalover32-a11y/vlf-chrome-proxy-https-proxy:main`
-- `ghcr.io/skalover32-a11y/vlf-chrome-proxy-admin:main`
+- `ghcr.io/vlf-project/vlf-chrome-proxy-api:main`
+- `ghcr.io/vlf-project/vlf-chrome-proxy-https-proxy:main`
+- `ghcr.io/vlf-project/vlf-chrome-proxy-admin:main`
 
 Use server-side builds only when explicitly needed:
 
 ```bash
-BUILD_ON_SERVER=true bash -c "$(curl -fsSL https://raw.githubusercontent.com/skalover32-a11y/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
+BUILD_ON_SERVER=true bash -c "$(curl -fsSL https://raw.githubusercontent.com/vlf-project/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
 ```
 
 If GHCR packages are private, either make the container packages public in GitHub Packages or pass `GHCR_USERNAME` and `GHCR_TOKEN` when running the installer.
@@ -406,7 +406,7 @@ Central backend install without building on the server:
 ```bash
 NODE_ROLE=central \
 BACKEND_PORT=18080 \
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/skalover32-a11y/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/vlf-project/vlf-chrome-proxy/main/deploy/ubuntu/install.sh)"
 ```
 
 What the installer does:
